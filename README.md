@@ -1,5 +1,13 @@
 # Hand tracking
 
+<p align="center">
+  <img src="assets/project-preview.jpg" alt="Four depth-image panels of a hand: a tracked point marked on the hand, a close-range depth view, a red hand contour with interior points, and a binary hand segmentation" width="255">
+</p>
+
+![Platform: MATLAB + PMD CamBoard nano](https://img.shields.io/badge/platform-MATLAB%20%2B%20PMD%20CamBoard%20nano-lightgrey)
+![Code: MATLAB + C++ MEX](https://img.shields.io/badge/code-MATLAB%20%2B%20C%2B%2B%20MEX-blue)
+![Source: original files recovered](https://img.shields.io/badge/source-original%20files%20recovered-blue)
+
 Depth-based hand tracking adapted for a close-range PMD nano camera.
 
 Students: Sa'ar Zehavi.
@@ -9,6 +17,10 @@ Supervision: Aaron Wetzler.
 ## Status
 
 Original MATLAB scripts and C++ MEX source have been recovered, together with the [June 2013 report](docs/report.pdf). The nine source files in `source/` are byte-for-byte copies of the original project submission. This is an archival snapshot, not a tested modern release.
+
+## Original code
+
+The nine recovered files are in [`source/`](source/): the MATLAB scripts `test1.m`, `test2.m` and `pmdrecorder.m`, and the C++ MEX gateway `iterate.cpp` with `Hand`, `Image` and `Queue` sources. They are byte-for-byte copies of the original submission. PMD SDK components are not included.
 
 ## Running
 
@@ -40,4 +52,6 @@ mex -output Iterate iterate.cpp Hand.cpp Image.cpp
 ## Attribution and Updates
 
 Original project by Sa'ar Zehavi, supervised by Aaron Wetzler at the Technion. The original website identifies the code as open source but the recovered package contains no explicit code license; no new license has been assigned. PMD SDK binaries, camera plugins, MATLAB MEX binaries and recordings are excluded. Original authors can open an issue to contribute updates or request corrections or removal of their material.
+
+Figure provenance: `assets/project-preview.jpg` is the original student-project figure from the archived project page on Aaron Wetzler's website, copied without modification. It is a historical figure, not a new tracking result.
 
