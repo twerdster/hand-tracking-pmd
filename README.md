@@ -8,48 +8,51 @@
 ![Code: MATLAB + C++ MEX](https://img.shields.io/badge/code-MATLAB%20%2B%20C%2B%2B%20MEX-blue)
 ![Source: original files recovered](https://img.shields.io/badge/source-original%20files%20recovered-blue)
 
-Depth-based hand tracking adapted for a close-range PMD nano camera.
+MATLAB drivers and a C++ MEX implementation for tracking hands in PMD CamBoard nano depth images.
 
-Students: Sa'ar Zehavi.
+Student: Sa'ar Zehavi.
 
 Supervision: Aaron Wetzler.
 
-## Status
+## Available source
 
-Original MATLAB scripts and C++ MEX source have been recovered, together with the [June 2013 report](docs/report.pdf). The nine source files in `source/` are byte-for-byte copies of the original project submission. This is an archival snapshot, not a tested modern release.
+The tracker takes close-range depth frames from a PMD CamBoard nano, segments candidate hand regions and estimates hand positions across frames. The recovered MATLAB drivers call a C++ MEX gateway that returns tracking-support flags, image coordinates with detection flags, and estimated 3D coordinates for up to two hands. These outputs are defined in source; tracking accuracy was not evaluated during recovery.
 
-## Original code
+[`source/`](source/) contains nine files copied byte-for-byte from the original submission: `test1.m`, `test2.m`, `pmdrecorder.m`, `iterate.cpp`, and the `Hand`, `Image` and `Queue` sources/headers. The [June 2013 report](docs/report.pdf) explains the algorithm. PMD SDK components, precompiled MEX binaries and recordings are not included.
 
-The nine recovered files are in [`source/`](source/): the MATLAB scripts `test1.m`, `test2.m` and `pmdrecorder.m`, and the C++ MEX gateway `iterate.cpp` with `Hand`, `Image` and `Queue` sources. They are byte-for-byte copies of the original submission. PMD SDK components are not included.
+## Setup and use
 
-## Running
+The plugin filenames indicate a 64-bit Windows MATLAB setup, with a compatible C++ MEX compiler and a PMD CamBoard nano. Obtain the PMD drivers, MATLAB interface and `camboardnano.W64.pap` / `camboardnanoproc.W64.ppp` plugins from their rights holder; they are not redistributed here.
 
-The original live-camera setup used 64-bit Windows MATLAB and a PMD CamBoard nano time-of-flight camera. Obtain compatible PMD camera drivers, the PMD MATLAB interface, and the `camboardnano.W64.pap` and `camboardnanoproc.W64.ppp` plugins from their rights holder. These SDK components are not redistributed here.
+The following build sequence is derived from the source and has not been compiled or run on the recovery machine. It requires a compatible MATLAB/compiler installation:
 
-1. Clone this repository and open MATLAB in `source/`.
-2. Configure a MATLAB-supported C++ compiler with `mex -setup C++`.
-3. Build the gateway from its three translation units:
+1. Open MATLAB in `source/` and configure the C++ compiler with `mex -setup C++`.
+2. Compile the three translation units into the case-sensitive gateway name used by the scripts:
 
-```matlab
-mex -output Iterate iterate.cpp Hand.cpp Image.cpp
-```
+   ```matlab
+   mex -output Iterate iterate.cpp Hand.cpp Image.cpp
+   ```
 
-4. Put your compatible PMD MATLAB interface on the MATLAB path and make its camera plugins discoverable.
-5. With the camera attached, run `test1` for the live tracker. Stop its original continuous loop with Ctrl+C.
+3. Add the PMD MATLAB interface to the MATLAB path and configure the plugin loader according to that SDK's documentation. The scripts pass bare plugin filenames to `pmdOpen`; their original plugin-search configuration was not recovered.
+4. With the camera attached, run `test1` for the continuous live loop; stop it with Ctrl+C.
 
-`pmdrecorder` records depth frames into the cell array `W` and saves `EasyMotions.mat`. `test2` expects a populated `W` in the workspace and uses a fixed frame range. Camera dimensions and geometric parameters are hardcoded in the historical scripts; adapt these for a different sensor. Recorded participant data and the original precompiled binaries are deliberately not included.
+The gateway uses the historical MEX array API; modern MATLAB/compiler compatibility is unverified.
 
-**Verification:** source recovery and file hashes were checked. MATLAB and the PMD camera/SDK are unavailable on the recovery machine, so compilation and tracking have not been tested.
+`pmdrecorder` collects depth frames into the cell array `W` and saves `EasyMotions.mat`. `test2` expects `W` already in the workspace and accesses frames 120 through 202, so it needs at least 202 entries. In `test1`, the PMD depth array is transposed before calling the gateway with dimensions 120 and 165. Those dimensions and the geometry/threshold values are hardcoded and need review for any different sensor. `test1` and `test2` are demonstration drivers rather than automated assertion tests.
+
+## Validation and limitations
+
+The original recovery record states that the nine source files and their hashes were checked. This revision compared SHA-256 hashes of all nine source files with the starting Git commit and inspected the MATLAB drivers and MEX inputs/outputs; the source files are unchanged. MATLAB, the PMD SDK/plugins, recordings and camera were unavailable for recovery validation, so no compilation or live/offline tracking test is recorded.
+
+The report's conclusions describe tracking drift, estimates moving toward the wrist or elbow, and jumping estimates. The demonstration link is historical and has not been reviewed during this revision; no current performance or robustness evaluation is available.
 
 ## Links
 
 - [Project entry on Aaron Wetzler's website](https://twerdster.github.io/#hand-tracking)
-- [Project demonstration](https://www.youtube.com/watch?v=EvEUtYNojeQ)
+- [Historical demonstration (not reviewed)](https://www.youtube.com/watch?v=EvEUtYNojeQ)
 - [Original report](docs/report.pdf)
 
-- [Code](https://github.com/twerdster/hand-tracking-pmd/tree/main/source)
-
-## Attribution and Updates
+## Attribution and reuse
 
 Original project by Sa'ar Zehavi, supervised by Aaron Wetzler at the Technion. The original website identifies the code as open source but the recovered package contains no explicit code license; no new license has been assigned. PMD SDK binaries, camera plugins, MATLAB MEX binaries and recordings are excluded. Original authors can open an issue to contribute updates or request corrections or removal of their material.
 
