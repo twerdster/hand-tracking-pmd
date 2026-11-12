@@ -35,6 +35,8 @@ mex -output Iterate iterate.cpp Hand.cpp Image.cpp
 - [Project demonstration](https://www.youtube.com/watch?v=EvEUtYNojeQ)
 - [Original report](docs/report.pdf)
 
+- [Code](https://github.com/twerdster/hand-tracking-pmd/tree/main/source)
+
 ## Attribution and Updates
 
 Original project by Sa'ar Zehavi, supervised by Aaron Wetzler at the Technion. The original website identifies the code as open source but the recovered package contains no explicit code license; no new license has been assigned. PMD SDK binaries, camera plugins, MATLAB MEX binaries and recordings are excluded. Original authors can open an issue to contribute updates or request corrections or removal of their material.
