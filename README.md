@@ -56,5 +56,7 @@ The report's conclusions describe tracking drift, estimates moving toward the wr
 
 Original project by Sa'ar Zehavi, supervised by Aaron Wetzler at the Technion. The original website identifies the code as open source but the recovered package contains no explicit code license; no new license has been assigned. PMD SDK binaries, camera plugins, MATLAB MEX binaries and recordings are excluded. Original authors can open an issue to contribute updates or request corrections or removal of their material.
 
+On 2026-11-12, Sa'ar Zehavi said he was happy for the project to appear on Aaron Wetzler's website. He said he had an associated YouTube video and might find MATLAB code in earlier correspondence, offering to send any materials he found. His reply included no files or links, and no further materials had been received as of 2026-11-13. The recovered source, report and historical demonstration link are unchanged. This confirms website inclusion only; it is not a code license or broader code-use permission.
+
 Figure provenance: `assets/project-preview.jpg` is the original student-project figure from the archived project page on Aaron Wetzler's website, copied without modification. It is a historical figure, not a new tracking result.
 
