@@ -51,12 +51,13 @@ The report's conclusions describe tracking drift, estimates moving toward the wr
 - [Project entry on Aaron Wetzler's website](https://twerdster.github.io/#hand-tracking)
 - [Historical demonstration (not reviewed)](https://www.youtube.com/watch?v=EvEUtYNojeQ)
 - [Original report](docs/report.pdf)
+- [Unfinished 2013 draft slides](docs/real-time-hand-tracking-draft-2013.pptx)
 
 ## Attribution and reuse
 
 Original project by Sa'ar Zehavi, supervised by Aaron Wetzler at the Technion. The original website identifies the code as open source but the recovered package contains no explicit code license; no new license has been assigned. PMD SDK binaries, camera plugins, MATLAB MEX binaries and recordings are excluded. Original authors can open an issue to contribute updates or request corrections or removal of their material.
 
-On 2026-11-12, Sa'ar Zehavi said he was happy for the project to appear on Aaron Wetzler's website. He said he had an associated YouTube video and might find MATLAB code in earlier correspondence, offering to send any materials he found. His reply included no files or links, and no further materials had been received as of 2026-11-13. The recovered source, report and historical demonstration link are unchanged. This confirms website inclusion only; it is not a code license or broader code-use permission.
+Sa'ar Zehavi approved website inclusion on 2026-11-12 and supplied the draft slides on 2026-11-13. They contain unfinished illustrations and a first-order approximation step that, when sharing the draft in 2013, he said he no longer used. The June report and recovered source are separate archival records; the slides are historical design material. See [provenance and permission scope](PROVENANCE.md). No code license or broader code-use permission is added.
 
 Figure provenance: `assets/project-preview.jpg` is the original student-project figure from the archived project page on Aaron Wetzler's website, copied without modification. It is a historical figure, not a new tracking result.
 
