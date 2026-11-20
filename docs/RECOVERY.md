@@ -1,6 +1,6 @@
 # Historical implementation and recovery notes
 
-This record describes the recovered historical project and checks made before the separate browser example was added on 17 November 2026. Statements about unavailable software/builds refer to that historical application. See the [current README](../README.md) and [updated demo guide](../updated/README.md) for the new example.
+This record describes the recovered historical project, its setup requirements and the checks made during recovery. See the [current README](../README.md) for the project overview.
 
 # Hand tracking
 

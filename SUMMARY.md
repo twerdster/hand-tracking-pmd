@@ -1,21 +1,17 @@
-# hand-tracking-pmd: maintenance context
+# hand-tracking-pmd: historical project and maintenance context
 
-Read this file, then SKILL.md, README.md and linked recovery/provenance records. Current update: 17 November 2026.
+Read this file, then SKILL.md, README.md, docs/RECOVERY.md and PROVENANCE.md. Current update: 20 November 2026.
 
-This MATLAB/C++ MEX project estimated hand positions from close-range PMD CamBoard nano depth frames using seed selection and region segmentation.
+This MATLAB/C++ MEX project by Sa'ar Zehavi, supervised by Aaron Wetzler, estimated hand positions from close-range PMD CamBoard nano depth frames using seed selection and region segmentation.
 
-## Original material
+## Preserved materials
 
-Nine unchanged source files, the June 2013 report and unfinished historical slides are preserved. MATLAB/PMD dependencies and recordings are absent, so no original build or tracking run is recorded. Original source, submodule pins, images, reports, slides, notices and author-response records are unchanged. [Historical implementation and recovery notes](docs/RECOVERY.md) retain the earlier setup and failed-build evidence; existing PROVENANCE.md or source/PROVENANCE.json remains authoritative where present.
+Nine unchanged source files, the June 2013 report, unfinished historical slides and original project image are preserved. MATLAB/PMD dependencies and recordings are absent, so no original build or tracking run is recorded. Historical requirements, setup instructions and recovery limitations remain in docs/RECOVERY.md. PROVENANCE.md records the contribution and permission scope; it does not add a blanket software or document license.
 
-## Updated demo
+## Current scope
 
-Move a generated hand shape, change depth and cutoff, inspect a connected region and export its pixel centroid. This is new independent JavaScript/Canvas code in docs/, not a restored or ported historical application. This simpler new threshold/component example does not port the seed-based 3D tracker, estimate real joints or establish PMD-camera accuracy.
+At Aaron's request on 2026-11-20, the separate browser demonstration and README Updated section were removed. Its JavaScript, HTML, CSS, demo-only license, hosting marker and updated implementation/validation guides are no longer in the current tree. The repository retains the historical student project and original source; it does not offer a replacement implementation or browser demo.
 
-Run https://twerdster.github.io/hand-tracking-pmd/ or `python3 -m http.server 8000 --directory docs` from the repository root. No build, account, SDK or external service is required. Serve docs/ as the GitHub Pages source.
+## Maintenance checks
 
-## Checks and review
-
-updated/VALIDATION.json records 10 passing Chromium browser assertions for the new demo, including responsive layout checks; these are scoped interaction checks on synthetic/local examples. No original native build, sensor accuracy or physical-mobile/Safari/Firefox coverage was added. Two Claude CLI editorial passes reviewed the concise README and new-demo guide; useful wording and scope qualifications were checked against code and recovery records. Detailed review records are private.
-
-Preserve attribution, original bytes and licensing boundaries. New demo code has a scoped MIT license in docs/DEMO-LICENSE.txt; it does not cover historical materials or third-party dependencies. Correspondence, personal contact data and machine-specific setup details stay private. Before every commit review and synchronize this file and SKILL.md.
+Verify unchanged hashes for all nine original source files, the report, slides, image and provenance record. Check Markdown links, historical credits and absence of browser-demo files or deployment instructions. These documentation and preservation checks do not establish native build compatibility or camera accuracy. Keep correspondence, personal contact data and machine-specific setup details private. Review and synchronize this file and SKILL.md before every commit.
